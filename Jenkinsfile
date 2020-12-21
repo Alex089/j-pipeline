@@ -1,7 +1,6 @@
 pipeline {
  environment {
  registry = "alexandert089/image-gallery"
- DOCKER_PWD = credentials('docker-login-pwd')
  }
  agent {
  docker {
