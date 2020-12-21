@@ -28,6 +28,7 @@ pipeline {
  stage("Build & Push Docker image") {
  steps {
  sh 'docker image build -t $registry:$BUILD_NUMBER .'
+ sh 'echo $DOCKER_PWD'
 sh 'docker login -u alexandert089 -p $DOCKER_PWD'
  sh 'docker image push $registry:$BUILD_NUMBER'
  sh "docker image rm $registry:$BUILD_NUMBER"
