@@ -33,7 +33,6 @@ sh 'docker login -u alexandert089 -p $DOCKER_PWD'
  sh "docker image rm $registry:$BUILD_NUMBER"
  }
  }
- }
  stage('Deploy and smoke test') {
         steps {
                 sh './jenkins/scripts/deploy.sh'
@@ -43,5 +42,6 @@ sh 'docker login -u alexandert089 -p $DOCKER_PWD'
         steps {
                 sh './jenkins/scripts/cleanup.sh'
         }
+ }
  }
 }
